@@ -1,0 +1,17 @@
+{
+  "name": "acuttis-calculator-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "npx nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "Andrei Hoffmann Ferreira",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "nodemon": "^2.0.22"
+  }
+}
