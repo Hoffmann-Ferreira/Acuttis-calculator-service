@@ -3,7 +3,14 @@ import * as yup from 'yup';
 import bcrypt from 'bcrypt';
 
 export async function authRoutes(app) {
-  app.post('/register', async (request) => {
+  app.setErrorHandler(function (error, request, reply) {
+    console.error('Ocorreu um erro:', error.message);
+    const menssageError = error.message;
+
+    reply.status(400).send({ menssageError });
+  });
+
+  app.post('/register', async (request, reply) => {
     const bodySchema = yup.object({
       name: yup.string().required('Preenchimento obrigatório'),
       email: yup
@@ -20,6 +27,16 @@ export async function authRoutes(app) {
     });
 
     const date = await bodySchema.validate(request.body);
+
+    const verifyUser = await prisma.user.findUnique({
+      where: {
+        email: date.email,
+      },
+    });
+
+    if (verifyUser) {
+      throw reply.code(400).send({ message: 'Email já cadastrado' });
+    }
 
     const hashedPassword = await bcrypt.hash(date.password, 10);
 
