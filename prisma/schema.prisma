@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id @unique @default(uuid())
+  name     String
+  email    String @unique
+  password String
+
+  hoursToPay ServiceHours[]
+}
+
+model ServiceHours {
+  id           String   @id @unique @default(uuid())
+  collaborator String
+  date         DateTime
+  daytimeHours Int
+  nightHours   Int
+  amount       Float
+  userId       String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

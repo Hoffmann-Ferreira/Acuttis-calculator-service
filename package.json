@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "dev": "npx nodemon src/index.js"
@@ -12,6 +13,11 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.44.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "prisma": "^4.16.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.16.2",
+    "fastify": "^4.19.2"
   }
 }
