@@ -2,6 +2,7 @@ import fastify from 'fastify';
 import fastifyJwt from '@fastify/jwt';
 import dotenv from 'dotenv';
 import { authRoutes } from './routes/auth.js';
+import { serviceHours } from './routes/serviceHours.js';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ server.register(fastifyJwt, {
 });
 
 server.register(authRoutes);
+server.register(serviceHours)
 
 server.listen({ port: 3333 }, (err) => {
   if (err) {
