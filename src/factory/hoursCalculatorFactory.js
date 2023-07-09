@@ -18,12 +18,11 @@ export default function hoursCalculator(
   let workedMinutes = workedmilli / (60 * 1000);
 
   if (final < initial) {
-    console.log('datas divergentes');
-    return;
+    throw  new Error('Datas divergentes!');
+    
   }
   if (workedHours > 24) {
-    console.log('trabalho escravo');
-    return;
+    throw  new Error('Carga horária acima do permitido!');
   }
 
   let started = initial.getHours() * 60 + initial.getMinutes();
