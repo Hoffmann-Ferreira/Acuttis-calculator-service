@@ -17,14 +17,16 @@ model User {
 }
 
 model ServiceHours {
-  id           String   @id @unique @default(uuid())
+  id           String @id @unique @default(uuid())
   collaborator String
   initialDate  String
   finalDate    String
   initialHours String
   finalHours   String
-  daytimePrice String
-  nightPrice   String
+  daytimePrice Float
+  nightPrice   Float
+  hoursDay     Float
+  hoursNigth   Float
   amount       Float
   userId       String
 

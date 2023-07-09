@@ -3,7 +3,6 @@ import * as yup from 'yup';
 import bcrypt from 'bcrypt';
 
 export async function authRoutes(app) {
-
   app.setErrorHandler(function (error, request, reply) {
     console.error('Ocorreu um erro:', error.message);
     const menssageError = error.message;

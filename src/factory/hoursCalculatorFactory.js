@@ -51,6 +51,7 @@ export default function hoursCalculator(
       break;
     }
   }
+  console.log('workedMinutes', workedMinutes);
   console.log('minutosDiurnos', daytimeMinutes);
   console.log('minutosNoturnos', nightMinutes);
   const amount =
@@ -62,8 +63,8 @@ export default function hoursCalculator(
     amount: Number(amount.toFixed(2)),
     daytimeMinutes: daytimeMinutes,
     nightMinutes: nightMinutes,
-    initialDateDate: initialDateParse[0],
-    finalDateDate: finalDateParse[0],
+    initialDate: initialDateParse[0],
+    finalDate: finalDateParse[0],
     initialHours: initialDateParse[1],
     finalHours: finalDateParse[1],
   };
