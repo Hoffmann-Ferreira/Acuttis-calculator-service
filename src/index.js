@@ -1,6 +1,7 @@
 import fastify from 'fastify';
 import fastifyJwt from '@fastify/jwt';
 import dotenv from 'dotenv';
+import cors from '@fastify/cors';
 import { authRoutes } from './routes/auth.js';
 import { serviceHours } from './routes/serviceHours.js';
 
@@ -11,6 +12,10 @@ const secretKey = process.env.SECRET_KEY;
 
 server.register(fastifyJwt, {
   secret: secretKey,
+});
+
+server.register(cors, {
+  origin: true,
 });
 
 server.register(authRoutes);
