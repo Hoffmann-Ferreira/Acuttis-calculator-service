@@ -90,7 +90,7 @@ export async function authRoutes(app) {
           }
         );
 
-        reply.code(200).send({ token: token });
+        reply.code(200).send({ token: token, userId: verifyUser.id });
         console.log('token', token);
       } else {
         reply.code(401).send({ message: 'Senha incorreta!' });
