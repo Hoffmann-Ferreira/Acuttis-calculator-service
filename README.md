@@ -52,9 +52,9 @@ API:
              "daytimePrice": "5",
              "nightPrice": "10.5"}
 ```
-OBS:
+IMPORTANT:
 
 ```bash
-- SEE .env.example  
+- Criar um arquivo .env na raiz do projeto conforme o .env.example
 
 ```
