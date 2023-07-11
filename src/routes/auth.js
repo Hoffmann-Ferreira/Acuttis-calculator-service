@@ -4,7 +4,6 @@ import bcrypt from 'bcrypt';
 
 export async function authRoutes(app) {
   app.setErrorHandler(function (error, request, reply) {
-    console.error('Ocorreu um erro:', error.message);
     const menssageError = error.message;
 
     reply.status(400).send({ menssageError });
@@ -91,7 +90,7 @@ export async function authRoutes(app) {
         );
 
         reply.code(200).send({ token: token, userId: verifyUser.id });
-        console.log('token', token);
+
       } else {
         reply.code(401).send({ message: 'Senha incorreta!' });
       }

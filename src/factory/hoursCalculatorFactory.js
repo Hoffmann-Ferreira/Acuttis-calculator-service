@@ -50,9 +50,7 @@ export default function hoursCalculator(
       break;
     }
   }
-  console.log('workedMinutes', workedMinutes);
-  console.log('minutosDiurnos', daytimeMinutes);
-  console.log('minutosNoturnos', nightMinutes);
+
   const amount =
     (daytimeMinutes / 60) * dayValue + (nightMinutes / 60) * nightValue;
 

@@ -52,3 +52,9 @@ API:
              "daytimePrice": "5",
              "nightPrice": "10.5"}
 ```
+OBS:
+
+```bash
+- SEE .env.example  
+
+```
